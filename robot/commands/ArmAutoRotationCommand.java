@@ -9,26 +9,27 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import frc.robot.Robot;
 
 public class ArmAutoRotationCommand extends Command {
     public int direction;
     public ArmAutoRotationCommand() {
-        direction = 1;
+        direction = -1;
         requires(Robot.armRotation);
     }
 
     // Called just before this Command runs the first time
     @Override
     protected void initialize() {
-        setTimeout(2.75);
+        setTimeout(2.5);
     }
 
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
         //System.out.println(direction);
-        Robot.armRotation.turn(0.35 * direction);
+        Robot.armRotation.turn(0.3 * direction);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -41,6 +42,13 @@ public class ArmAutoRotationCommand extends Command {
     @Override
     protected void end() {
         direction *= -1;
+        
+        if (direction == 1) {
+            Shuffleboard.selectTab("CameraUp");
+        } else {
+            Shuffleboard.selectTab("CameraDown");
+        }
+
         Robot.armRotation.turn(0);
     }
 

@@ -37,8 +37,6 @@ public class DriveSubsystem extends Subsystem {
   // driving with joy stick
   // move is y-axis (up and down) and turn is x-axis (left and right)
   public void maunalDrive(double move, double turn) {
-    move = move * 0.75;
-    turn = turn * 0.6;
     // passing arguments move and turn into drive function
     drive.arcadeDrive(move, turn);
   }

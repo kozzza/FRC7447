@@ -21,13 +21,13 @@ public class DrivebaseLTurnCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-    setTimeout(1);
+    setTimeout(0.4);
   }
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
-    Robot.drivebaseTurn.maunalDrive(0, -0.5);
+    Robot.drivebaseTurn.maunalDrive(0, -75);
   }
 
   // Make this return true when this Command no longer needs to run execute()

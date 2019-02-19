@@ -7,6 +7,7 @@
 
 package frc.robot;
 
+import edu.wpi.first.networktables.NetworkTableInstance;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
@@ -45,6 +46,7 @@ public class Robot extends TimedRobot {
     chooser.setDefaultOption("Default Auto", new DriveManuallyCommand());
     // chooser.addOption("My Auto", new MyAutoCommand());
     SmartDashboard.putData("Auto mode", chooser);
+    NetworkTableInstance.getDefault().getEntry("/CameraPublisher/MyCamera/streams").setStringArray(new String[] {"mjpg:http://10.74.47.109/?action=stream"});
   }
 
   /**

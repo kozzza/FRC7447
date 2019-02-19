@@ -27,11 +27,11 @@ public class DriveManuallyCommand extends Command {
     double move = -Robot.oi.stick.getY();
     double turn = Robot.oi.stick.getX();
     if (toggle) {
-      Robot.driveSubsystem.maunalDrive(move * 0.75, turn * 0.75);
+      Robot.driveSubsystem.maunalDrive(move * 0.55, turn * 0.45);
     }
 
     else {
-      Robot.driveSubsystem.maunalDrive(move, turn);
+      Robot.driveSubsystem.maunalDrive(move * 0.75, turn * 0.625);
     }
   }
 
