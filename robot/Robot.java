@@ -17,6 +17,7 @@ import frc.robot.commands.DriveManuallyCommand;
 import frc.robot.subsystems.ArmRotation;
 import frc.robot.subsystems.DriveSubsystem;
 import frc.robot.subsystems.DrivebaseTurn;
+import frc.robot.subsystems.IntakeSpin;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -30,6 +31,7 @@ public class Robot extends TimedRobot {
   public static DriveSubsystem driveSubsystem = new DriveSubsystem(); 
   public static ArmRotation armRotation = new ArmRotation();
   public static DrivebaseTurn drivebaseTurn = new DrivebaseTurn();
+  public static IntakeSpin intakeSpin = new IntakeSpin();
 
   public static OI oi;
 

@@ -29,12 +29,12 @@ public class RobotMap {
   public static int rightMaster = 3;
   public static int rightSlave = 4;
 
-  public static int wheelDiameter = 6;
-
   public static int buttonA = 1;
   public static int buttonB = 2;
-  public static int buttonRShldr = 6;
-  public static int buttonLShldr = 5;
   public static int buttonY = 4;
-  public static int armMotor = 5;
+  public static int buttonLShldr = 5;
+  public static int buttonRShldr = 6;
+
+  public static int armMotor = 6;
+  public static int intakeMotor = 5;
 }

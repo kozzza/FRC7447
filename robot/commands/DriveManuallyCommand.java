@@ -19,19 +19,20 @@ public class DriveManuallyCommand extends Command {
   // Called just before this Command runs the first time
   @Override
   protected void initialize() {
-  }
+  } 
 
   // Called repeatedly when this Command is scheduled to run
   @Override
   protected void execute() {
     double move = -Robot.oi.stick.getY();
     double turn = Robot.oi.stick.getX();
+    double boost = Robot.oi.stick.getRawAxis(3)/5;
     if (toggle) {
-      Robot.driveSubsystem.maunalDrive(move * 0.55, turn * 0.45);
+      Robot.driveSubsystem.maunalDrive(move * 0.55 + boost, turn * 0.43 + boost);
     }
 
     else {
-      Robot.driveSubsystem.maunalDrive(move * 0.75, turn * 0.625);
+      Robot.driveSubsystem.maunalDrive(move * 0.80 + boost, turn * 0.625 + boost);
     }
   }
 
