@@ -35,6 +35,7 @@ public class RobotMap {
   public static int buttonLShldr = 5;
   public static int buttonRShldr = 6;
 
-  public static int armMotor = 6;
   public static int intakeMotor = 5;
+  public static int rightArmMotor = 6;
+  public static int leftArMotor = 7;
 }

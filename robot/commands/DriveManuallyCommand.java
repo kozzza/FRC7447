@@ -11,7 +11,13 @@ import edu.wpi.first.wpilibj.command.Command;
 import frc.robot.Robot;
 
 public class DriveManuallyCommand extends Command {
+
+  double mmspeed = 0.55; //micromove speed
+  double mtspeed = 0.43; //microturn speed
+  double mspeed = 0.80; //move speed
+  double tspeed = 0.625; //turn speed
   public static boolean toggle;
+
   public DriveManuallyCommand() {
     requires(Robot.driveSubsystem);
   }
@@ -27,12 +33,13 @@ public class DriveManuallyCommand extends Command {
     double move = -Robot.oi.stick.getY();
     double turn = Robot.oi.stick.getX();
     double boost = Robot.oi.stick.getRawAxis(3)/5;
+
     if (toggle) {
-      Robot.driveSubsystem.maunalDrive(move * 0.55 + boost, turn * 0.43 + boost);
+      Robot.driveSubsystem.manualDrive(move * (mmspeed + boost), turn * (mtspeed + boost));
     }
 
     else {
-      Robot.driveSubsystem.maunalDrive(move * 0.80 + boost, turn * 0.625 + boost);
+      Robot.driveSubsystem.manualDrive(move * (mspeed + boost), turn * (tspeed + boost));
     }
   }
 

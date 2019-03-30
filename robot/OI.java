@@ -10,7 +10,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
-import frc.robot.commands.ArmAutoRotationCommand;
+import frc.robot.commands.ArmAutoRotationCCommand;
+import frc.robot.commands.ArmAutoRotationHCommand;
 import frc.robot.commands.DriveSpeedAdjustCommand;
 import frc.robot.commands.DrivebaseRTurnCommand;
 import frc.robot.commands.DrivebaseLTurnCommand;
@@ -30,7 +31,10 @@ public class OI {
 
   public OI() {
     Button buttonA = new JoystickButton(stick, RobotMap.buttonA); 
-    buttonA.whenPressed(new ArmAutoRotationCommand());
+    buttonA.whenPressed(new ArmAutoRotationHCommand());
+
+    Button buttonB = new JoystickButton(stick, RobotMap.buttonB);
+    buttonB.whenPressed(new ArmAutoRotationCCommand());
 
     Button buttonRShldr = new JoystickButton(stick, RobotMap.buttonRShldr);
     buttonRShldr.whenPressed(new DrivebaseRTurnCommand());

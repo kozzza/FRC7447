@@ -20,10 +20,12 @@ import frc.robot.commands.ArmManualRotationCommand;
 public class ArmRotation extends Subsystem {
   // Put methods for controlling this subsystem
   // here. Call these from Commands.
-  public WPI_VictorSPX armMotor = new WPI_VictorSPX(RobotMap.armMotor);
+  public WPI_VictorSPX rightArmMotor = new WPI_VictorSPX(RobotMap.rightArmMotor);
+  public WPI_VictorSPX leftArmMotor = new WPI_VictorSPX(RobotMap.leftArMotor);
 
   public void turn(double percentVoltage) {
-    armMotor.set(ControlMode.PercentOutput, percentVoltage);
+    rightArmMotor.set(ControlMode.PercentOutput, percentVoltage);
+    leftArmMotor.set(ControlMode.PercentOutput, percentVoltage * -1);
     //ControlMode.PercentOutput means the next var (percentVoltage) tells it how much percent voltage to give the motor
   }
   @Override
