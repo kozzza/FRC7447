@@ -13,12 +13,12 @@ import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
 import frc.robot.Robot;
 
 public class ArmAutoRotationCCommand extends Command {
-    private int armDirection;
+    private static int armDirection = 1;
     private boolean finished;
 
     public ArmAutoRotationCCommand() {
         finished = false;
-        armDirection = 1;
+        
         requires(Robot.armRotation);
     }
 
